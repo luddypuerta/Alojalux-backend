@@ -1,6 +1,7 @@
 const { hotel } = require("./hotel.db");
 const { site } = require("./site.db");
 const { users } = require("./user.db");
+const { room } = require("./room.db");
 
 class DbProject {
     constructor() {
@@ -18,7 +19,8 @@ class DbProject {
         this.dbStorage = {
             users: [...users],
             site: [...site],
-            hotel: [...hotel]
+            hotel: [...hotel],
+            room: [...room]
     }
     }
 }

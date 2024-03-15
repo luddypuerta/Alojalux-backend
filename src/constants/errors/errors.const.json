@@ -39,6 +39,18 @@
       }
     }
   },
+  "roomErrors": {
+    "queries": {
+      "getAll": {
+        "code":"ROM0001",
+        "message": "error query"
+      },
+      "getById": {
+        "code":"ROM0002",
+        "message": "error query"
+      }
+    }
+  },
   "hotelErrors": {
   "hotelNotExist": {
     "code":"HTT-0001",

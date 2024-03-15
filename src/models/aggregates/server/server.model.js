@@ -14,7 +14,8 @@ class ServerModel {
             users: '/api/users',
             site: '/api/site',
             auth: '/api/auth',
-            hotel: '/api/hotel'
+            hotel: '/api/hotel',
+            room: '/api/room'
         }
         this.middleware();
         this.routes();
@@ -32,6 +33,7 @@ class ServerModel {
         this.app.use(this.paths.site, require('../../../routes/site.routes'));
         this.app.use(this.paths.auth, require('../../../routes/auth.routes'));
         this.app.use(this.paths.hotel, require('../../../routes/hotel.routes'));
+        this.app.use(this.paths.room, require('../../../routes/room.routes'));
     }
 
     listen() {

@@ -15,8 +15,9 @@ module.exports = {
     },
     getSite: async (req, res) => {
         const { id } = req.params;
+        let idNum = Number(id);
         try {
-        const site = await siteQuery.getSiteByIdQuery(id);
+        const site = await siteQuery.getSiteByIdQuery(idNum);
         return responseHelpers.responseSuccess(res, site );
         } catch (error) {
             
