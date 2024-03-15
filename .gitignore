@@ -1,0 +1,8 @@
+# Ignore automatically generated files and folders
+node_modules/
+local.env
+.yarn.lock
+/package-lock.json
+
+# Ignore macOS .DS_Store files
+.DS_Store

@@ -1,0 +1,66 @@
+{
+  "userErrors": {
+    "userNotExist": {
+      "code":"US-0001",
+      "message": "User not exist"
+    },
+    "queries": {
+      "create": {
+        "code":"US0001",
+        "message": "error query"
+      },
+      "getAll": {
+        "code":"US0002",
+        "message": "error query"
+      },
+      "getById": {
+        "code":"US0003",
+        "message": "error query"
+      },
+      "getUserNamePassword": {
+        "code":"US0004",
+        "message": "error query"
+      }
+    }
+  },
+  "siteErrors": {
+    "queries": {
+      "create": {
+        "code":"STT0001",
+        "message": "error query"
+      },
+      "getAll": {
+        "code":"STT0002",
+        "message": "error query"
+      },
+      "getFilter": {
+        "code":"STT0003",
+        "message": "error query"
+      }
+    }
+  },
+  "hotelErrors": {
+  "hotelNotExist": {
+    "code":"HTT-0001",
+    "message": "Hotel not exist"
+  },
+    "queries": {
+      "create": {
+        "code":"HTT0001",
+        "message": "error query"
+      },
+      "getAll": {
+        "code":"HTT0002",
+        "message": "error query"
+      },
+      "getById": {
+        "code":"HTT0003",
+        "message": "error query"
+      },
+      "update": {
+        "code":"HTT0004",
+        "message": "error query"
+      }
+    }
+  }
+}
