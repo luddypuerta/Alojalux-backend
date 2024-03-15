@@ -1,6 +1,5 @@
 # Ignore automatically generated files and folders
 node_modules/
-local.env
 .yarn.lock
 /package-lock.json
 

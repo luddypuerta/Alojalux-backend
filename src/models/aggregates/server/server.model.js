@@ -37,9 +37,14 @@ class ServerModel {
     }
 
     listen() {
-        this.app.listen(this.serverPort, this.serverHost, () => {
-            console.log(`Server listening on http://${this.serverHost}:${this.serverPort}`)
-        })
+        const port = process.env.PORT || 3000;
+        // this.app.listen(this.serverPort, this.serverHost, () => {
+        //     console.log(`Server listening on http://${this.serverHost}:${this.serverPort}`)
+        // })
+
+        this.app.listen(port, () => {
+            console.log(`Server is running on port ${port}`);
+          });
     }
 }
 
