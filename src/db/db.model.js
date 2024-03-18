@@ -2,6 +2,7 @@ const { hotel } = require("./hotel.db");
 const { site } = require("./site.db");
 const { users } = require("./user.db");
 const { room } = require("./room.db");
+const { booking } = require("./booking.db");
 
 class DbProject {
     constructor() {
@@ -20,7 +21,8 @@ class DbProject {
             users: [...users],
             site: [...site],
             hotel: [...hotel],
-            room: [...room]
+            room: [...room],
+            booking: [...booking]
     }
     }
 }

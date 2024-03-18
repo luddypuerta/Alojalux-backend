@@ -35,8 +35,9 @@ module.exports = {
     getSiteFilter: async (req, res) => {
         const { siteName } = req.query;
         try {
-        const site = await siteQuery.getFilterSiteQuery(siteName);
-        return responseHelpers.responseSuccess(res, site );
+            const regexSiteName = siteName.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+            const site = await siteQuery.getFilterSiteQuery(regexSiteName);
+            return responseHelpers.responseSuccess(res, site);
         } catch (error) {
             return responseHelpers.responseError(res, 500, error);
         }

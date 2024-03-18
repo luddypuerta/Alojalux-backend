@@ -9,9 +9,18 @@ const { hotelQuery } = require('../models/index.queries');
 
 
 module.exports = {
-    getHotels: async (_, res) => {
+    getHotels: async (req, res) => {
         try {
-            const hotels = await hotelQuery.getAllHotelsQuery();
+            let hotels = await hotelQuery.getAllHotelsQuery();
+
+            const { location } = req.query;
+            if (location) {
+                const regexLocation = location.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+                hotels = hotels.filter((hotel) => {
+                    const normalizedHotelLocation = hotel.location.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+                    return normalizedHotelLocation.includes(regexLocation);
+                });
+            }
             return responseHelpers.responseSuccess(res, hotels);
         } catch (error) {
             return responseHelpers.responseError(res, 500, error);
@@ -20,8 +29,8 @@ module.exports = {
     getHotel: async (req, res) => {
         const { id } = req.params;
         try {
-        const user = await hotelQuery.getHotelIDQuery(id);
-        return responseHelpers.responseSuccess(res, user );
+            const user = await hotelQuery.getHotelIDQuery(id);
+            return responseHelpers.responseSuccess(res, user );
         } catch (error) {
             
             return responseHelpers.responseError(res, 500, error);
@@ -30,17 +39,20 @@ module.exports = {
     createHotel: async (req, res) => {
         try {
             const hotelData = req.body;
-            hotelData.id = uuidv4();
-            await hotelQuery.createQuery({hotelData});
-            return responseHelpers.responseSuccess(res, null);
+            const hotelId = uuidv4();
+            hotelData.key = hotelId;
+            hotelData.image = "/hotel-default.jpg";
+            await hotelQuery.createQuery(hotelData);
+            return responseHelpers.responseSuccess(res, { id: hotelId });
         } catch (error) {
             return responseHelpers.responseError(res, 500, error);
         }
     },
     updateHotel: async (req, res) => {
-        const { id } = req.params;
         try {
-            await hotelQuery.updateQuery(id, {...req.body});
+            const { id } = req.params;
+            const key = id.toString()
+            await hotelQuery.updateQuery(key, {...req.body});
             return responseHelpers.responseSuccess(res, null);
         } catch (error) {
             return responseHelpers.responseError(res, 500, error);

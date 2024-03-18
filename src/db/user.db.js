@@ -2,10 +2,11 @@ module.exports = {
     users: [
         {
             id: "1",
-            name: "test",
-            lastName: "test",
-            password: "123",
-            phoneNumber: "1231231233"
+            name: "Agencia de Viajes",
+            lastName: "FlyHigh",
+            nickName: "admin",
+            password: "Alojalux2024",
+            phoneNumber: "+573111211110",
         }
     ]
 }

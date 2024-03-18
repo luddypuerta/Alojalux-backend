@@ -1,7 +1,7 @@
 module.exports = {
     hotel: [
         {
-            id: '1',
+            key: '1',
             stars: 5,
             name: "Hotel Capital Bogotá",
             location: "Bogotá",
@@ -10,14 +10,20 @@ module.exports = {
             textOffer: "¡Reserva ahora y obtén un desayuno gratis!",
             price: "COP 280.000",
             image: "/hotel-capital-bogota.jpg",
-            status: true,
             packagesIncluded: [
-                "Wifi gratuito",
-                "Desayuno gratis"
-            ]
+                {
+                    id: '1',
+                    name: "Wifi gratuito",
+                },
+                {
+                    id: '2',
+                    name: "Desayuno gratis",
+                }
+            ],
+            status: true
         },
         {
-            id: '2',
+            key: '2',
             stars: 4,
             name: "Medellín Grand Hotel",
             location: "Medellín",
@@ -26,14 +32,20 @@ module.exports = {
             textOffer: "¡Reserva ahora y recibe una upgrade de habitación gratuita!",
             price: "COP 320.000",
             image: "/medellin-grand-hotel.jpg",
-            status: true,
             packagesIncluded: [
-                "Piscina al aire libre",
-                "Upgrade de habitación gratuita"
-            ]
+                {
+                    id: '3',
+                    name: "Wifi gratuito",
+                },
+                {
+                    id: '4',
+                    name: "Upgrade de habitación gratuita",
+                }
+            ],
+            status: true
         },
         {
-            id: '3',
+            key: '3',
             stars: 3,
             name: "Cali Sunshine Hotel",
             location: "Cali",
@@ -42,15 +54,21 @@ module.exports = {
             textOffer: "¡Reserva ahora y obtén un masaje relajante de cortesía!",
             price: "COP 300.000",
             image: "/cali-sunshine-hotel.jpg",
-            status: true,
             packagesIncluded: [
-                "Servicios de spa",
-                "Masaje relajante de cortesía"
-            ]
+                {
+                    id: '5',
+                    name: "Servicios de spa",
+                },
+                {
+                    id: '6',
+                    name: "Masaje relajante de cortesía",
+                }
+            ],
+            status: true
         },
         {
-            id: '4',
-            stars: 2,
+            key: '4',
+            stars: 4,
             name: "Barranquilla Beach Resort",
             location: "Barranquilla",
             title: "Relájate junto al mar",
@@ -58,15 +76,21 @@ module.exports = {
             textOffer: "¡Reserva ahora y recibe un 15% de descuento en tratamientos de spa!",
             price: "COP 350.000",
             image: "/barranquilla-beach-resort.jpg",
-            status: true,
             packagesIncluded: [
-                "Acceso directo a la playa",
-                "15% de descuento en tratamientos de spa"
-            ]
+                {
+                    id: '7',
+                    name: "Acceso directo a la playa",
+                },
+                {
+                    id: '8',
+                    name: "15% de descuento en tratamientos de spa",
+                }
+            ],
+            status: false
         },
         {
-            id: '5',
-            stars: 4,
+            key: '5',
+            stars: 5,
             name: "Cartagena Colonial Hotel",
             location: "Cartagena",
             title: "Explora la magia de Cartagena",
@@ -74,15 +98,21 @@ module.exports = {
             textOffer: "¡Reserva ahora y disfruta de un recorrido gratuito por la ciudad!",
             price: "COP 400.000",
             image: "/cartagena-colonial-hotel.jpg",
-            status: true,
             packagesIncluded: [
-                "Recorrido gratuito por la ciudad",
-                "Experiencia colonial única"
-            ]
+                {
+                    id: '9',
+                    name: "Recorrido gratuito por la ciudad",
+                },
+                {
+                    id: '10',
+                    name: "Experiencia colonial única",
+                }
+            ],
+            status: true
         },
         {
-            id: '6',
-            stars: 5,
+            key: '6',
+            stars: 3,
             name: "Cúcuta Plaza Hotel",
             location: "Cúcuta",
             title: "Descubre Cúcuta en comodidad",
@@ -90,15 +120,21 @@ module.exports = {
             textOffer: "¡Reserva ahora y obtén un 10% de descuento en comidas!",
             price: "COP 260.000",
             image: "/cucuta-plaza-hotel.jpg",
-            status: true,
             packagesIncluded: [
-                "Descuento del 10% en comidas",
-                "Ubicación céntrica"
-            ]
+                {
+                    id: '11',
+                    name: "Descuento del 10% en comidas",
+                },
+                {
+                    id: '12',
+                    name: "Ubicación céntrica",
+                }
+            ],
+            status: true
         },
         {
-            id: '7',
-            stars: 3,
+            key: '7',
+            stars: 5,
             name: "Bucaramanga Mountain Retreat",
             location: "Bucaramanga",
             title: "Escápate a la naturaleza",
@@ -106,15 +142,21 @@ module.exports = {
             textOffer: "¡Reserva ahora y recibe una noche adicional gratis!",
             price: "COP 380.000",
             image: "/bucaramanga-mountain-retreat.jpg",
-            status: true,
             packagesIncluded: [
-                "Vistas panorámicas a las montañas",
-                "Noche adicional gratis"
-            ]
+                {
+                    id: '13',
+                    name: "Vistas panorámicas a las montañas",
+                },
+                {
+                    id: '14',
+                    name: "Noche adicional gratis",
+                }
+            ],
+            status: true
         },
         {
-            id: '8',
-            stars: 5,
+            key: '8',
+            stars: 3,
             name: "Pereira Valley Resort",
             location: "Pereira",
             title: "Retiro en el valle de Pereira",
@@ -122,15 +164,21 @@ module.exports = {
             textOffer: "¡Reserva ahora y obtén un masaje de bienvenida gratuito!",
             price: "COP 340.000",
             image: "/pereira-valley-resort.jpg",
-            status: true,
             packagesIncluded: [
-                "Entorno natural tranquilo",
-                "Masaje de bienvenida gratuito"
-            ]
+                {
+                    id: '15',
+                    name: "Entorno natural tranquilo",
+                },
+                {
+                    id: '16',
+                    name: "Masaje de bienvenida gratuito",
+                }
+            ],
+            status: true
         },
         {
-            id: '9',
-            stars: 4,
+            key: '9',
+            stars: 5,
             name: "Santa Marta Beachfront Hotel",
             location: "Santa Marta",
             title: "Lujo frente al mar en Santa Marta",
@@ -138,14 +186,20 @@ module.exports = {
             textOffer: "¡Reserva ahora y obtén un cocktail de bienvenida gratis!",
             price: "COP 420.000",
             image: "/santa-marta-beachfront-hotel.jpg",
-            status: true,
             packagesIncluded: [
-                "Acceso directo a la playa",
-                "Cocktail de bienvenida gratis"
-            ]
+                {
+                    id: '17',
+                    name: "Acceso directo a la playa",
+                },
+                {
+                    id: '18',
+                    name: "Cocktail de bienvenida gratis"
+                }
+            ],
+            status: true
         },
         {
-            id: '10',
+            key: '10',
             stars: 5,
             name: "Ibagué Green Valley Resort",
             location: "Ibagué",
@@ -154,11 +208,17 @@ module.exports = {
             textOffer: "¡Reserva ahora y obtén un paseo en bicicleta gratuito por el valle!",
             price: "COP 300.000",
             image: "/ibague-green-valley-resort.jpg",
-            status: false,
             packagesIncluded: [
-                "Paseo en bicicleta por el valle",
-                "Ambiente tranquilo y relajado"
-            ]
+                {
+                    id: '19',
+                    name: "Paseo en bicicleta por el valle",
+                },
+                {
+                    id: '20',
+                    name: "Ambiente tranquilo y relajado",
+                }
+            ],
+            status: false
         }
     ]
 }

@@ -4,4 +4,5 @@ module.exports = {
     authController: require('./auth.controller'),
     hotelController: require('./hotel.controller'),
     roomController: require('./room.controller'),
+    bookingController: require('./booking.controller'),
 }

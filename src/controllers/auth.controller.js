@@ -2,20 +2,27 @@
 const { errorsConst } = require('../constants/index.constants');
 const { responseHelpers } = require('../helpers/index.helpers')
 
+//Libraries
+const jwt = require('jsonwebtoken');
+
 // Models - Queries
 const { userQuery } = require('../models/index.queries');
 
 module.exports = {
     login: async (req, res) => {
-        const { name, password } = req.body
+        const { nickName, password } = req.body
         try {
-            const user = await userQuery.getUserNamePasswordQuery(name, password);
+            const user = await userQuery.getUserNamePasswordQuery(nickName, password);
             if (!user) return responseHelpers.responseError(res, 404, errorsConst.userErrors.userNotExist);
+
+            const token = jwt.sign({ id: user.id }, 'ALojaLux');
+
             const userFound = {
                 id: user.id,
                 name: user.name,
                 lastName: user.lastName,
-                phoneNumber: user.phoneNumber
+                phoneNumber: user.phoneNumber,
+                token
             }
             return responseHelpers.responseSuccess(res, userFound);
         } catch (error) {

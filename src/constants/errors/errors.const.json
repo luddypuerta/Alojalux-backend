@@ -1,24 +1,24 @@
 {
   "userErrors": {
     "userNotExist": {
-      "code":"US-0001",
+      "code": "US-0001",
       "message": "User not exist"
     },
     "queries": {
       "create": {
-        "code":"US0001",
+        "code": "US0001",
         "message": "error query"
       },
       "getAll": {
-        "code":"US0002",
+        "code": "US0002",
         "message": "error query"
       },
       "getById": {
-        "code":"US0003",
+        "code": "US0003",
         "message": "error query"
       },
       "getUserNamePassword": {
-        "code":"US0004",
+        "code": "US0004",
         "message": "error query"
       }
     }
@@ -26,51 +26,79 @@
   "siteErrors": {
     "queries": {
       "create": {
-        "code":"STT0001",
+        "code": "STT0001",
         "message": "error query"
       },
       "getAll": {
-        "code":"STT0002",
+        "code": "STT0002",
         "message": "error query"
       },
       "getFilter": {
-        "code":"STT0003",
+        "code": "STT0003",
         "message": "error query"
       }
     }
   },
   "roomErrors": {
+    "roomNotExist": {
+      "code": "ROM-0001",
+      "message": "Room not exist"
+    },
     "queries": {
       "getAll": {
-        "code":"ROM0001",
+        "code": "ROM0001",
         "message": "error query"
       },
       "getById": {
-        "code":"ROM0002",
+        "code": "ROM0002",
+        "message": "error query"
+      },
+      "create": {
+        "code": "ROM0003",
+        "message": "error query"
+      },
+      "update": {
+        "code": "ROM0004",
         "message": "error query"
       }
     }
   },
   "hotelErrors": {
-  "hotelNotExist": {
-    "code":"HTT-0001",
-    "message": "Hotel not exist"
-  },
+    "hotelNotExist": {
+      "code": "HTT-0001",
+      "message": "Hotel not exist"
+    },
     "queries": {
       "create": {
-        "code":"HTT0001",
+        "code": "HTT0001",
         "message": "error query"
       },
       "getAll": {
-        "code":"HTT0002",
+        "code": "HTT0002",
         "message": "error query"
       },
       "getById": {
-        "code":"HTT0003",
+        "code": "HTT0003",
         "message": "error query"
       },
       "update": {
-        "code":"HTT0004",
+        "code": "HTT0004",
+        "message": "error query"
+      }
+    }
+  },
+  "bookingErrors": {
+    "bookingNotExist": {
+      "code": "BOK-0001",
+      "message": "Booking not exist"
+    },
+    "queries": {
+      "getAll": {
+        "code": "BOK0001",
+        "message": "error query"
+      },
+      "create": {
+        "code": "BOK0002",
         "message": "error query"
       }
     }

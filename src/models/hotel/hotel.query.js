@@ -6,7 +6,7 @@ module.exports = {
     getHotelIDQuery: (id) => {
         try {
             return new Promise((resolve, _) => {
-                resolve(dbStorage.hotel.find(hotel => hotel.id === id))
+                resolve(dbStorage.hotel.find(hotel => hotel.key === id))
         })
         } catch {
             throw errorsConst.hotelErrors.queries.getById
@@ -34,16 +34,17 @@ module.exports = {
         try {
             return new Promise((resolve, reject) => {
                 function updateElementById(id, dataToUpdate, tableData) {
-                    const index = tableData.findIndex(objeto => objeto.id == id);
+                    const index = tableData.findIndex(element => element.key === id);
 
-                    if (index !== -1)
+                    if (index !== -1) {
                         tableData[index] = Object.assign({}, tableData[index], dataToUpdate);
-                    else
+                        resolve(null);
+                    } else {
                         reject(errorsConst.hotelErrors.hotelNotExist);
+                    }
                 }
 
                 updateElementById(id, data, dbStorage.hotel);
-                resolve(null)
         })
         } catch {
             throw errorsConst.hotelErrors.queries.update

@@ -24,11 +24,13 @@ module.exports = {
     getFilterSiteQuery: (valueFilter = "") => {
         try {
             return new Promise((resolve, _) => {
-                const filteredSites = dbStorage.site.filter(item => item.site.toLowerCase().startsWith(valueFilter.toLowerCase()));
-                resolve(filteredSites)
+                const filteredSites = dbStorage.site.filter(item => {
+                    const normalizedSiteName = item.site.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+                    return normalizedSiteName.startsWith(valueFilter.toLowerCase());
+                });
+                resolve(filteredSites);
             })
-        } catch (error) {
-            console.log(error)
+        } catch {
             throw errorsConst.siteErrors.queries.getFilter
         }
     },

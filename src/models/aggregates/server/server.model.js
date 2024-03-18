@@ -15,7 +15,8 @@ class ServerModel {
             site: '/api/site',
             auth: '/api/auth',
             hotel: '/api/hotel',
-            room: '/api/room'
+            room: '/api/room',
+            booking: '/api/booking',
         }
         this.middleware();
         this.routes();
@@ -34,13 +35,11 @@ class ServerModel {
         this.app.use(this.paths.auth, require('../../../routes/auth.routes'));
         this.app.use(this.paths.hotel, require('../../../routes/hotel.routes'));
         this.app.use(this.paths.room, require('../../../routes/room.routes'));
+        this.app.use(this.paths.booking, require('../../../routes/booking.routes'));
     }
 
     listen() {
         const port = process.env.PORT || 3000;
-        // this.app.listen(this.serverPort, this.serverHost, () => {
-        //     console.log(`Server listening on http://${this.serverHost}:${this.serverPort}`)
-        // })
 
         this.app.listen(port, () => {
             console.log(`Server is running on port ${port}`);
